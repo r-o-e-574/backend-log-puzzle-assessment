@@ -52,6 +52,7 @@ def read_urls(filename):
 
 
 def create_urls(urls):
+    """Creates and returns the url"""
     front = 'http://code.google.com'
     url_return = [front + url for url in urls]
 
@@ -59,6 +60,7 @@ def create_urls(urls):
 
 
 def return_last_word(url):
+    """Finds and returns the last word"""
     return re.findall(r'-(....).jpg', url)
 
 
