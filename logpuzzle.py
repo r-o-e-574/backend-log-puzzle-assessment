@@ -19,7 +19,7 @@ __author__ = "Ruben Espino with help from Chris Warren"
 import os
 import re
 import sys
-# checks to see if appropriate python version is installed
+# Checks to see if appropriate python version is installed
 if sys.version_info[0] >= 3:
     from urllib.request import urlretrieve
 else:
@@ -44,7 +44,7 @@ def read_urls(filename):
     sorted_urls = sorted(url_list, key=return_last_word)
 
     def extract_host_name(url):
-        """returns the host name from a given url"""
+        """Returns the host name from a given url"""
     host = re.findall(r'GET (\S+) HTTP', url)
     print(host)
 
@@ -65,7 +65,7 @@ def return_last_word(url):
 
 
 def add_prefixes(filename, host_list):
-    """adds server prefixes to the urls in host_list"""
+    """Adds server prefixes to the urls in host_list"""
     server_name = "https://" + re.findall(r'\S+\_(\S+)', filename)[0]
     completed_url_list = [server_name + host for host in host_list]
 
